@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COANDILAC · Cooperativa Andina de Lácteos · Guachucal, Nariño</title>
+  <meta name="description"
+    content="Cooperativa Andina de Lácteos desde Guachucal, Nariño. Calidad, origen y propósito en cada producto lácteo del altiplano nariñense." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =============================================
+   COANDILAC — Rediseño Editorial Cálido
+   Paleta: ámbar · terracota · verde campo · crema
+   ============================================= */
+
+    :root {
+      --oro: #3A70C8;
+      --oro-claro: #5B90E8;
+      --oro-palido: #D6E8FF;
+      --tierra: #2E8B4A;
+      --tierra-claro: #4CAF70;
+      --vino: #1A3A6E;
+      --verde: #2E8B4A;
+      --verde-claro: #4CAF70;
+      --crema: #FFFFFF;
+      --crema-2: #F0F6FF;
+      --crema-3: #E0EEFF;
+      --tinta: #0D1B3E;
+      --tinta-2: #1E3A6E;
+      --tinta-suave: #4A6080;
+      --blanco: #FFFFFF;
+      --sombra: rgba(58, 112, 200, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--crema);
+      color: var(--tinta);
+      font-size: 17px;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--oro-claro);
+      color: var(--tinta);
+    }
+
+    /* -----------------------------------------------
+   UTILIDADES
+----------------------------------------------- */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    .label-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--oro);
+      margin-bottom: 20px;
+    }
+
+    .label-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--oro);
+    }
+
+    /* -----------------------------------------------
+   NAV
+----------------------------------------------- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      transition: all 0.4s;
+      padding: 22px 0;
+    }
+
+    .nav.scrolled {
+      background: var(--tinta);
+      padding: 14px 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-logo span {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      color: var(--crema);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--oro-claro);
+    }
+
+    .nav-cta {
+      background: var(--oro);
+      color: var(--tinta) !important;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      font-size: 0.82rem !important;
+      transition: all 0.3s !important;
+      letter-spacing: 0 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--oro-claro) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile nav */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--crema);
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner {
+        padding: 0 20px;
+      }
+    }
+
+    /* -----------------------------------------------
+   HERO
+----------------------------------------------- */
+    .hero {
+      min-height: 100vh;
+      background: var(--tinta);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Fondo texturizado */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 75% 45%, rgba(58, 112, 200, 0.40) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 5% 85%, rgba(10, 47, 122, 0.60) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 92% 8%, rgba(46, 139, 74, 0.20) 0%, transparent 50%);
+    }
+
+    /* Grain */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 140px 40px 100px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px 8px 10px;
+      background: rgba(58, 112, 200, 0.18);
+      border: 1px solid rgba(58, 112, 200, 0.40);
+      border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.7s ease-out both;
+    }
+
+    .hero-eyebrow .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--oro-claro);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero-eyebrow span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--oro-claro);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(91, 144, 232, 0.5);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+        box-shadow: 0 0 0 6px rgba(91, 144, 232, 0);
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.2rem, 6.5vw, 6rem);
+      font-weight: 700;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+      color: var(--crema);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease-out 0.1s both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--oro-palido);
+    }
+
+    .hero h1 .accent-line {
+      display: inline;
+      position: relative;
+    }
+
+    .hero h1 .accent-line::after {
+      content: '';
+      position: absolute;
+      bottom: 0.06em;
+      left: 0;
+      right: 0;
+      height: 0.12em;
+      background: var(--tierra);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 500px;
+      line-height: 1.65;
+      margin-bottom: 44px;
+      animation: fadeUp 0.9s ease-out 0.2s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 1s ease-out 0.3s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--oro);
+      color: var(--tinta);
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--oro-claro);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(58, 112, 200, 0.40);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--crema);
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      animation: fadeUp 1s ease-out 0.4s both;
+    }
+
+    .hero-stat .num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--oro-claro);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .hero-stat .lbl {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.60);
+      margin-top: 4px;
+      line-height: 1.3;
+      max-width: 120px;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeUp 1s ease-out 0.25s both;
+      position: relative;
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      margin-top: -180px;
+    }
+
+    .hero-logo-wrap img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 30px 60px rgba(58, 112, 200, 0.30)) drop-shadow(0 0 80px rgba(58, 112, 200, 0.18));
+      animation: floatLogo 7s ease-in-out infinite;
+    }
+
+    /* Anillo decorativo */
+    .hero-ring {
+      position: absolute;
+      inset: -18%;
+      border: 1px solid rgba(58, 112, 200, 0.25);
+      border-radius: 50%;
+      animation: spinRing 50s linear infinite;
+    }
+
+    .hero-ring::before,
+    .hero-ring::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--oro);
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-ring::after {
+      top: unset;
+      bottom: 0;
+      background: var(--tierra);
+      width: 6px;
+      height: 6px;
+    }
+
+    @keyframes floatLogo {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-16px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes spinRing {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 3;
+      animation: fadeUp 1s ease-out 0.8s both;
+    }
+
+    .hero-scroll span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scaleY(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1.2);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 120px 20px 80px;
+        gap: 48px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-logo-wrap {
+        max-width: 280px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+    }
+
+    /* -----------------------------------------------
+   MARQUEE
+----------------------------------------------- */
+    .marquee {
+      background: var(--oro);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: marqueeScroll 35s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--tinta);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 0 32px;
+    }
+
+    .marquee-item .sep {
+      width: 5px;
+      height: 5px;
+      background: var(--tierra);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .marquee-item em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* -----------------------------------------------
+   STATS
+----------------------------------------------- */
+    .stats {
+      background: var(--tinta-2);
+      padding: 80px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 40px 32px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      position: relative;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 0;
+      background: var(--oro);
+      transition: height 0.6s ease;
+    }
+
+    .stat-item.visible::before {
+      height: 40px;
+    }
+
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4rem);
+      font-weight: 700;
+      color: var(--crema);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .stat-num .suffix {
+      font-size: 0.55em;
+      color: var(--oro-claro);
+      font-style: italic;
+    }
+
+    .stat-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 700px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    /* -----------------------------------------------
+   SECCIÓN BASE
+----------------------------------------------- */
+    .section {
+      padding: 120px 0;
+    }
+
+    .section-sm {
+      padding: 80px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-sm {
+        padding: 60px 0;
+      }
+    }
+
+    /* -----------------------------------------------
+   TERRITORIO (quiénes somos)
+----------------------------------------------- */
+    .territorio {
+      background: var(--crema);
+    }
+
+    .territorio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .territorio-text h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--tinta);
+      margin-bottom: 28px;
+    }
+
+    .territorio-text h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--verde);
+    }
+
+    .territorio-text p {
+      font-size: 1.08rem;
+      color: var(--tinta-suave);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 500px;
+    }
+
+    .territorio-quote {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--oro);
+      border-left: 3px solid var(--oro);
+      padding-left: 20px;
+      margin-top: 32px;
+      line-height: 1.45;
+    }
+
+    /* Visual mapa/paisaje */
+    .territorio-visual {
+      position: relative;
+    }
+
+    .territorio-img-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 5/6;
+      background: linear-gradient(160deg, #D4B07A 0%, #8B5E3C 40%, #3E6E33 100%);
+      box-shadow: 0 40px 80px -20px rgba(13, 27, 62, 0.3);
+      position: relative;
+    }
+
+    .territorio-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .territorio-img-wrap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .territorio-chip {
+      position: absolute;
+      background: var(--crema);
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 24px var(--sombra);
+    }
+
+    .territorio-chip .ch-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tinta-suave);
+    }
+
+    .territorio-chip .ch-val {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--tinta);
+      margin-top: 2px;
+    }
+
+    .territorio-chip.c1 {
+      top: 28px;
+      left: -24px;
+    }
+
+    .territorio-chip.c2 {
+      bottom: 36px;
+      right: -24px;
+    }
+
+    @media (max-width: 900px) {
+      .territorio-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .territorio-chip.c1 {
+        left: 16px;
+      }
+
+      .territorio-chip.c2 {
+        right: 16px;
+      }
+    }
+
+    /* -----------------------------------------------
+   PROPÓSITO / PILARES
+----------------------------------------------- */
+    .proposito {
+      background: var(--tinta);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proposito::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(58, 112, 200, 0.12) 0%, transparent 65%);
+      top: -200px;
+      right: -150px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .proposito::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(26, 58, 110, 0.20) 0%, transparent 65%);
+      bottom: -150px;
+      left: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .proposito-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .proposito-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--crema);
+      margin-bottom: 20px;
+    }
+
+    .proposito-header h2 em {
+      color: var(--oro-palido);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .proposito-header p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.65;
+    }
+
+    .proposito-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .proposito-card {
+      padding: 40px 32px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proposito-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(58, 112, 200, 0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .proposito-card:hover {
+      border-color: rgba(58, 112, 200, 0.3);
+      transform: translateY(-6px);
+    }
+
+    .proposito-card:hover::before {
+      opacity: 1;
+    }
+
+    .pc-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 3.5rem;
+      color: var(--oro);
+      opacity: 0.35;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .pc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(58, 112, 200, 0.12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .pc-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--oro-claro);
+    }
+
+    .proposito-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--crema);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .proposito-card p {
+      font-size: 0.97rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .proposito-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------
+   EMPRESAS ALIADAS
+----------------------------------------------- */
+    .aliados {
+      background: var(--crema-2);
+    }
+
+    .aliados-header {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      margin-bottom: 70px;
+      align-items: end;
+    }
+
+    .aliados-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--tinta);
+    }
+
+    .aliados-header h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--tierra);
+    }
+
+    .aliados-header p {
+      font-size: 1.05rem;
+      color: var(--tinta-suave);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 800px) {
+      .aliados-header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .aliados-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* Tarjeta aliado */
+    .ally-card {
+      background: var(--blanco);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px var(--sombra);
+      transition: box-shadow 0.4s, transform 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ally-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(13, 27, 62, 0.15);
+    }
+
+    /* Header de la tarjeta */
+    .ally-card-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, var(--crema-3) 0%, var(--crema-2) 100%);
+      border-bottom: 1px solid rgba(13, 27, 62, 0.06);
+    }
+
+    .ally-card-head img {
+      height: 46px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    .ally-card-head-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ally-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--tinta);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ally-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .ally-badge.lacteos {
+      background: rgba(62, 110, 51, 0.1);
+      color: var(--verde);
+      border: 1px solid rgba(62, 110, 51, 0.2);
+    }
+
+    .ally-badge.venta {
+      background: rgba(58, 112, 200, 0.1);
+      color: var(--oro);
+      border: 1px solid rgba(58, 112, 200, 0.22);
+    }
+
+    .ally-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ---- Carrusel ---- */
+    .ally-carousel {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--crema-3);
+      cursor: grab;
+      user-select: none;
+    }
+
+    .ally-carousel:active {
+      cursor: grabbing;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, var(--crema-2), var(--crema-3));
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 20px 16px;
+      background: linear-gradient(to top, rgba(13, 27, 62, 0.75) 0%, transparent 100%);
+      color: #fff;
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .carousel-caption .cap-num {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 3px;
+      font-weight: 400;
+    }
+
+    /* Flechas */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--tinta);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.25s, background 0.25s;
+      z-index: 5;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .carousel-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.5;
+    }
+
+    .carousel-btn.prev {
+      left: 12px;
+    }
+
+    .carousel-btn.next {
+      right: 12px;
+    }
+
+    .ally-carousel:hover .carousel-btn {
+      opacity: 1;
+    }
+
+    .carousel-btn:hover {
+      background: var(--blanco);
+    }
+
+    /* Dots */
+    .carousel-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      border: none;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: #fff;
+      transform: scale(1.5);
+    }
+
+    /* Tarjeta punto de venta */
+    .ally-card.punto-venta {
+      grid-column: span 2;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .ally-card.punto-venta .ally-card-head {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-width: 220px;
+      border-bottom: none;
+      border-right: 1px solid rgba(13, 27, 62, 0.06);
+      gap: 12px;
+    }
+
+    .ally-card.punto-venta .ally-card-head img {
+      height: 64px;
+      max-width: 150px;
+    }
+
+    .ally-venta-body {
+      padding: 36px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .ally-venta-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--tinta);
+      letter-spacing: -0.02em;
+    }
+
+    .ally-venta-body p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--tinta-suave);
+      line-height: 1.55;
+      max-width: 520px;
+    }
+
+    @media (max-width: 900px) {
+      .aliados-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ally-card.punto-venta {
+        grid-column: span 1;
+        flex-direction: column;
+      }
+
+      .ally-card.punto-venta .ally-card-head {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid rgba(13, 27, 62, 0.06);
+        min-width: unset;
+      }
+
+      .ally-venta-body {
+        padding: 24px;
+      }
+    }
+
+    /* -----------------------------------------------
+   IMPACTO
+----------------------------------------------- */
+    .impacto {
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impacto-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .impacto-left h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--tinta);
+      margin-bottom: 24px;
+    }
+
+    .impacto-left h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--tierra);
+    }
+
+    .impacto-left p {
+      font-size: 1.05rem;
+      color: var(--tinta-suave);
+      line-height: 1.65;
+      max-width: 420px;
+    }
+
+    .impacto-left .btn-primary {
+      margin-top: 36px;
+    }
+
+    .impacto-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .impacto-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(58, 112, 200, 0.12);
+      transition: background 0.3s;
+    }
+
+    .impacto-item:first-child {
+      border-top: 1px solid rgba(58, 112, 200, 0.12);
+    }
+
+    .impacto-item:hover {
+      background: rgba(58, 112, 200, 0.04);
+      margin: 0 -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .imp-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 2rem;
+      color: var(--oro);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 48px;
+      transition: transform 0.3s;
+    }
+
+    .impacto-item:hover .imp-num {
+      transform: rotate(-8deg) scale(1.15);
+    }
+
+    .imp-text h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--tinta);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .imp-text p {
+      font-size: 0.94rem;
+      color: var(--tinta-suave);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .impacto-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    /* -----------------------------------------------
+   VALOR / POR QUÉ INVERTIR
+----------------------------------------------- */
+    .valor {
+      background: var(--tierra);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .valor::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 20%, rgba(58, 112, 200, 0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 0% 100%, rgba(26, 58, 110, 0.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .valor-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .valor-top {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+
+    .valor-top .label-tag {
+      color: var(--oro-palido);
+    }
+
+    .valor-top .label-tag::before {
+      background: var(--oro-palido);
+    }
+
+    .valor-top h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.6rem, 5.5vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      color: var(--crema);
+      margin-bottom: 20px;
+    }
+
+    .valor-top h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--oro-palido);
+    }
+
+    .valor-top p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.65;
+    }
+
+    .valor-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .valor-card {
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      transition: all 0.4s;
+    }
+
+    .valor-card:hover {
+      background: rgba(255, 255, 255, 0.13);
+      transform: translateY(-5px);
+      border-color: rgba(91, 144, 232, 0.4);
+    }
+
+    .valor-card svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--oro-palido);
+      margin-bottom: 18px;
+    }
+
+    .valor-card h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--crema);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .valor-card p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .valor-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .valor-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------
+   CTA / ALIANZAS
+----------------------------------------------- */
+    .alianzas {
+      background: var(--crema);
+      padding: 140px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .alianzas::before {
+      content: 'COANDILAC';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(6rem, 18vw, 20rem);
+      color: rgba(58, 112, 200, 0.06);
+      letter-spacing: -0.06em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .alianzas-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .alianzas-inner .label-tag {
+      justify-content: center;
+    }
+
+    .alianzas-inner h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--tinta);
+      margin-bottom: 28px;
+    }
+
+    .alianzas-inner h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--oro);
+    }
+
+    .alianzas-inner>p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--tinta-suave);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.45;
+    }
+
+    .alianzas-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .alianzas-btns .btn-primary {
+      background: var(--tinta);
+      color: var(--crema);
+      font-size: 1rem;
+      padding: 18px 40px;
+    }
+
+    .alianzas-btns .btn-primary:hover {
+      background: var(--vino);
+      box-shadow: 0 16px 40px rgba(13, 27, 62, 0.25);
+    }
+
+    .alianzas-btns .btn-secondary {
+      border-color: rgba(13, 27, 62, 0.2);
+      color: var(--tinta);
+      font-size: 1rem;
+      padding: 18px 40px;
+    }
+
+    .alianzas-btns .btn-secondary:hover {
+      border-color: var(--tinta);
+      background: rgba(13, 27, 62, 0.04);
+    }
+
+    .alianzas-features {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 80px;
+      flex-wrap: wrap;
+    }
+
+    .alianza-feat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alianza-feat .af-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 3.2rem;
+      color: var(--oro);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .alianza-feat .af-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tinta-suave);
+      text-align: center;
+      max-width: 150px;
+    }
+
+    /* -----------------------------------------------
+   FOOTER
+----------------------------------------------- */
+    .footer {
+      background: var(--tinta);
+      color: var(--crema);
+      padding: 90px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background: radial-gradient(ellipse 70% 60% at 80% 30%, rgba(58, 112, 200, 0.9), transparent);
+      pointer-events: none;
+    }
+
+    .footer-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 70px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .footer-brand img {
+      height: 50px;
+      width: auto;
+      filter: brightness(1.1);
+    }
+
+    .footer-brand p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 320px;
+    }
+
+    .footer-brand .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .footer-brand .social-links a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--crema);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .footer-brand .social-links a:hover {
+      background: var(--oro);
+      border-color: var(--oro);
+      color: var(--tinta);
+    }
+
+    .footer-brand .social-links a svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-col h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--oro);
+      margin-bottom: 22px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.97rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--oro-claro);
+    }
+
+    .footer-col a svg,
+    .footer-col p svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--oro);
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer {
+        padding: 60px 0 36px;
+      }
+    }
+
+    /* -----------------------------------------------
+   SCROLL REVEAL
+----------------------------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.12s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.22s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.32s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <img src="coandilac.png" alt="Coandilac" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#territorio">Territorio</a></li>
+        <li><a href="#proposito">Propósito</a></li>
+        <li><a href="#aliados">Aliados</a></li>
+        <li><a href="#impacto">Impacto</a></li>
+        <li><a href="#alianzas">Alianzas</a></li>
+        <li><a href="#contacto" class="nav-cta">Contáctanos</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="pulse"></span>
+          <span>Guachucal · Nariño · Colombia</span>
+        </div>
+
+        <h1>
+          Del altiplano<br />
+          al mundo,<br />
+          con <em><span class="accent-line">propósito.</span></em>
+        </h1>
+
+        <p class="hero-desc">
+          Cooperativa Andina de Lácteos que articula productores, transformadores y aliados comerciales en la cuenca
+          lechera más importante del sur de Colombia.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#aliados" class="btn-primary">
+            Ver empresas aliadas
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#proposito" class="btn-secondary">Nuestra historia</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">+3.100<span style="font-size:0.5em;color:var(--oro-claro);font-style:italic;">m</span>
+            </div>
+            <div class="lbl">Altura sobre el nivel del mar</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">5</div>
+            <div class="lbl">Empresas aliadas activas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">2030</div>
+            <div class="lbl">Meta agroindustrial</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-logo-wrap">
+          <div class="hero-ring"></div>
+          <img src="logo.png" alt="Coandilac — Cooperativa Andina de Lácteos" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Calidad <em>con origen</em><span class="sep"></span></span>
+      <span class="marquee-item">Trazabilidad <em>desde la montaña</em><span class="sep"></span></span>
+      <span class="marquee-item">Cadena <em>integrada y justa</em><span class="sep"></span></span>
+      <span class="marquee-item">Impacto <em>social verificable</em><span class="sep"></span></span>
+      <span class="marquee-item">Altiplano <em>nariñense</em><span class="sep"></span></span>
+      <span class="marquee-item">Cooperativa <em>con propósito</em><span class="sep"></span></span>
+      <span class="marquee-item">Calidad <em>con origen</em><span class="sep"></span></span>
+      <span class="marquee-item">Trazabilidad <em>desde la montaña</em><span class="sep"></span></span>
+      <span class="marquee-item">Cadena <em>integrada y justa</em><span class="sep"></span></span>
+      <span class="marquee-item">Impacto <em>social verificable</em><span class="sep"></span></span>
+      <span class="marquee-item">Altiplano <em>nariñense</em><span class="sep"></span></span>
+      <span class="marquee-item">Cooperativa <em>con propósito</em><span class="sep"></span></span>
+    </div>
+  </div>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-num">
+            <span class="counter" data-target="3180">0</span>
+            <span class="suffix">m</span>
+          </div>
+          <div class="stat-lbl">Altitud de producción<br />sobre el nivel del mar</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num">
+            <span class="counter" data-target="5">0</span>
+            <span class="suffix">+</span>
+          </div>
+          <div class="stat-lbl">Empresas aliadas<br />en la red COANDILAC</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num">
+            <span class="counter" data-target="20">0</span>
+            <span class="suffix">+</span>
+          </div>
+          <div class="stat-lbl">Productos lácteos<br />en la cadena</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num">
+            <span class="counter" data-target="2030">0</span>
+          </div>
+          <div class="stat-lbl">Año meta para planta<br />UHT y leche en polvo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TERRITORIO ===== -->
+  <section class="section territorio" id="territorio">
+    <div class="container">
+      <div class="territorio-grid">
+        <div class="reveal">
+          <h2 class="display">
+            Un territorio que produce<br />
+            leche <em>e identidad.</em>
+          </h2>
+          <p>
+            En Guachucal, Nariño a más de 3.100 metros sobre el nivel del mar se concentra una de las principales
+            cuencas lecheras del sur de Colombia. Pequeños productores, campesinos e integrantes de comunidades
+            indígenas sostienen con su trabajo la vida rural, la cultura y la seguridad alimentaria del territorio.
+          </p>
+          <p>
+            COANDILAC nace para articular esa riqueza con mercados de mayor valor, garantizando condiciones justas en
+            toda la cadena y construyendo una agroindustria que regrese beneficios al campo.
+          </p>
+          <p class="territorio-quote">
+            "COANDILAC nace para ellos y con ellos."
+          </p>
+        </div>
+
+        <div class="territorio-visual reveal reveal-delay-1">
+          <div class="territorio-img-wrap">
+            <img src="img/paramo.jpg" alt="Páramo de Guachucal, Nariño" />
+          </div>
+          <div class="territorio-chip c1">
+            <div class="ch-label">Altitud</div>
+            <div class="ch-val">+3.180 m s.n.m.</div>
+          </div>
+          <div class="territorio-chip c2">
+            <div class="ch-label">Latitud</div>
+            <div class="ch-val">0°57′ Norte</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROPÓSITO / MISIÓN / VISIÓN ===== -->
+  <section class="section proposito" id="proposito">
+    <div class="container">
+      <div class="proposito-header reveal">
+        <h2>
+          Una cooperativa que<br />
+          <em>integra, fortalece</em><br />
+          y transforma.
+        </h2>
+        <p>
+          Articulamos productores y transformadores del altiplano nariñense en un modelo cooperativo que genera valor
+          equitativo en toda la cadena láctea.
+        </p>
+      </div>
+      <div class="proposito-cards">
+        <div class="proposito-card reveal">
+          <div class="pc-icon">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <h3>Propósito</h3>
+          <p>Impulsar una transformación real del sector lácteo en Nariño, dignificando el trabajo de los pequeños
+            productores y consolidando una cadena más equitativa, competitiva y sostenible.</p>
+        </div>
+        <div class="proposito-card reveal reveal-delay-1">
+          <div class="pc-icon">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <h3>Misión</h3>
+          <p>Integrar y fortalecer la cadena láctea del sur de Colombia mediante un modelo cooperativo eficiente que
+            articula productores y transformadores, garantizando leche de alta calidad con valor agregado.</p>
+        </div>
+        <div class="proposito-card reveal reveal-delay-2">
+          <div class="pc-icon">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <h3>Visión 2030</h3>
+          <p>Para el 2030, COANDILAC será una organización agroindustrial consolidada con planta operativa de leche UHT
+            y leche en polvo, con presencia en mercados nacionales e internacionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMPRESAS ALIADAS ===== -->
+  <section class="section aliados" id="aliados">
+    <div class="container">
+      <div class="aliados-header reveal">
+        <div>
+          <h2>
+            La red que transforma<br />
+            la leche en <em>valor real.</em>
+          </h2>
+        </div>
+        <p>
+          COANDILAC articula su red de producción con empresas aliadas que transforman y comercializan los productos
+          lácteos del altiplano nariñense. Juntos conformamos una cadena integrada con identidad, calidad y propósito.
+        </p>
+      </div>
+
+      <div class="aliados-grid">
+
+        <!-- Lácteos Buena Vista -->
+        <article class="ally-card reveal">
+          <div class="ally-card-head">
+            <img src="lacteos_buena_vista.png" alt="Lácteos Buena Vista" />
+            <div class="ally-card-head-text">
+              <h3 class="ally-name">Lácteos Buena Vista</h3>
+              <span class="ally-badge lacteos">Empresa láctea aliada</span>
+            </div>
+          </div>
+          <div class="ally-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="img/bv_mantequilla.jpg" alt="Mantequilla" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 01</span>Mantequilla</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/bv_queso_campesino.jpg" alt="Queso Campesino" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 02</span>Queso Campesino</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/bv_queso_cuajada.jpg" alt="Queso Cuajada" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 03</span>Queso Cuajada</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/bv_queso_doble_crema.jpg" alt="Queso Doble Crema" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 04</span>Queso Doble Crema</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/bv_queso_mozarella.jpg" alt="Queso Mozarella" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 05</span>Queso Mozarella</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/bv_yogurt.jpg" alt="Yogurt" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 06</span>Yogurt</div>
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></button>
+            <button class="carousel-btn next" aria-label="Siguiente"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></button>
+            <div class="carousel-dots"></div>
+          </div>
+        </article>
+
+        <!-- Lácteos San Diego -->
+        <article class="ally-card reveal reveal-delay-1">
+          <div class="ally-card-head">
+            <img src="lacteos_san_diego.png" alt="Lácteos San Diego" />
+            <div class="ally-card-head-text">
+              <h3 class="ally-name">Lácteos San Diego</h3>
+              <span class="ally-badge lacteos">Empresa láctea aliada</span>
+            </div>
+          </div>
+          <div class="ally-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="img/sd_queso_doble_crema.jpg" alt="Queso Doble Crema" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 01</span>Queso Doble Crema</div>
+              </div>
+            </div>
+            <div class="carousel-dots"></div>
+          </div>
+        </article>
+
+        <!-- Lácteos Shirley -->
+        <article class="ally-card reveal">
+          <div class="ally-card-head">
+            <img src="lacteos_shirley.png" alt="Lácteos Shirley" />
+            <div class="ally-card-head-text">
+              <h3 class="ally-name">Lácteos Shirley</h3>
+              <span class="ally-badge lacteos">Empresa láctea aliada</span>
+            </div>
+          </div>
+          <div class="ally-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="img/sh_queso_campesino_prensado.jpg" alt="Queso Campesino Prensado"
+                  onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 01</span>Queso Campesino Prensado</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_crema_de_leche.jpg" alt="Crema de Leche" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 02</span>Crema de Leche</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_cuajada_con_sal.jpg" alt="Cuajada con Sal" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 03</span>Cuajada con Sal</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_cuajada_sin_sal.jpg" alt="Cuajada sin Sal" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 04</span>Cuajada sin Sal</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_mantequilla.jpg" alt="Mantequilla" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 05</span>Mantequilla</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_queso_doble_crema.jpg" alt="Queso Doble Crema" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 06</span>Queso Doble Crema</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/sh_queso_molido.jpg" alt="Queso Molido" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 07</span>Queso Molido</div>
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></button>
+            <button class="carousel-btn next" aria-label="Siguiente"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></button>
+            <div class="carousel-dots"></div>
+          </div>
+        </article>
+
+        <!-- Powermilk -->
+        <article class="ally-card reveal reveal-delay-1">
+          <div class="ally-card-head">
+            <img src="powermilk.png" alt="Powermilk" />
+            <div class="ally-card-head-text">
+              <h3 class="ally-name">Powermilk</h3>
+              <span class="ally-badge lacteos">Empresa láctea aliada</span>
+            </div>
+          </div>
+          <div class="ally-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="img/pm_crema_de_leche.jpg" alt="Crema de Leche" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 01</span>Crema de Leche</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/pm_queso_doble_crema_tajado.jpg" alt="Queso Doble Crema Tajado"
+                  onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 02</span>Queso Doble Crema Tajado</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/pm_queso_doble_crema_entero.jpg" alt="Queso Doble Crema Entero"
+                  onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 03</span>Queso Doble Crema Entero</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/pm_queso_mozarella_entero.jpg" alt="Queso Mozarella Entero"
+                  onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 04</span>Queso Mozarella Entero</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/pm_queso_mozarella_tajado.jpg" alt="Queso Mozarella Tajado"
+                  onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 05</span>Queso Mozarella Tajado</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="img/pm_requeson.jpg" alt="Requesón" onerror="this.style.display='none'">
+                <div class="carousel-caption"><span class="cap-num">Producto 06</span>Requesón</div>
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></button>
+            <button class="carousel-btn next" aria-label="Siguiente"><svg fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></button>
+            <div class="carousel-dots"></div>
+          </div>
+        </article>
+
+        <!-- Oro Blanco -->
+        <article class="ally-card punto-venta reveal">
+          <div class="ally-card-head">
+            <img src="lacteos_oro_blanco.png" alt="Oro Blanco" />
+            <div class="ally-card-head-text">
+              <h3 class="ally-name">Oro Blanco</h3>
+              <span class="ally-badge venta">Punto de venta autorizado</span>
+            </div>
+          </div>
+          <div class="ally-venta-body">
+            <h3>Comercialización con alcance</h3>
+            <p>
+              Aliado estratégico de distribución. Oro Blanco acerca los productos lácteos del altiplano nariñense al
+              consumidor final como punto de venta autorizado de la red COANDILAC, ampliando el alcance comercial de
+              toda la cadena.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACTO ===== -->
+  <section class="section impacto" id="impacto">
+    <div class="container">
+      <div class="impacto-grid">
+        <div class="reveal">
+          <h2>
+            El impacto que se<br />
+            convierte en <em>valor.</em>
+          </h2>
+          <p>
+            Cada alianza con COANDILAC genera un retorno que va más allá del producto: fortalece comunidades, integra
+            mercados y construye una región más próspera.
+          </p>
+          <a href="#alianzas" class="btn-primary" style="margin-top:32px">
+            Ser aliado
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="impacto-list reveal reveal-delay-1">
+          <div class="impacto-item">
+            <span class="imp-num">i.</span>
+            <div class="imp-text">
+              <h3>Dignificamos el trabajo del campo</h3>
+              <p>Garantizamos condiciones más justas para los pequeños productores del altiplano nariñense en toda la
+                cadena productiva.</p>
+            </div>
+          </div>
+          <div class="impacto-item">
+            <span class="imp-num">ii.</span>
+            <div class="imp-text">
+              <h3>Integramos comunidades a mercados</h3>
+              <p>Conectamos comunidades rurales e indígenas con mercados competitivos regionales y nacionales.</p>
+            </div>
+          </div>
+          <div class="impacto-item">
+            <span class="imp-num">iii.</span>
+            <div class="imp-text">
+              <h3>Generamos identidad territorial</h3>
+              <p>Transformamos el origen de Guachucal y la cuenca lechera del sur en valor diferencial de mercado.</p>
+            </div>
+          </div>
+          <div class="impacto-item">
+            <span class="imp-num">iv.</span>
+            <div class="imp-text">
+              <h3>Consolidamos una cadena más justa</h3>
+              <p>Articulamos productores y transformadores para que el valor agregado se redistribuya con equidad.</p>
+            </div>
+          </div>
+          <div class="impacto-item">
+            <span class="imp-num">v.</span>
+            <div class="imp-text">
+              <h3>Promovemos sostenibilidad</h3>
+              <p>Operamos con sistemas de alta montaña que respetan los ciclos del páramo y la riqueza del altiplano.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALOR / POR QUÉ INVERTIR ===== -->
+  <section class="section valor">
+    <div class="container">
+      <div class="valor-inner">
+        <div class="valor-top reveal">
+          <h2>Calidad <em>con origen.</em><br />Impacto <em>verificable.</em></h2>
+          <p>Nuestra leche proviene de sistemas de alta montaña en Guachucal, con condiciones naturales privilegiadas
+            para procesos industriales. Cada producto genera impacto social real desde su origen.</p>
+        </div>
+        <div class="valor-cards">
+          <div class="valor-card reveal">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
+            </svg>
+            <h4>Calidad de altura</h4>
+            <p>Productos lácteos de alta calidad producidos con condiciones naturales privilegiadas a más de 3.100 m.
+            </p>
+          </div>
+          <div class="valor-card reveal reveal-delay-1">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <h4>Trazabilidad total</h4>
+            <p>Sabemos de dónde viene cada litro: del campo a la mesa con origen, proceso y productor identificados.</p>
+          </div>
+          <div class="valor-card reveal reveal-delay-2">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+            <h4>Cadena integrada</h4>
+            <p>Productores y transformadores articulados en un modelo cooperativo confiable y escalable.</p>
+          </div>
+          <div class="valor-card reveal reveal-delay-3">
+            <svg fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <h4>Visión agroindustrial</h4>
+            <p>Plan claro hacia planta UHT y leche en polvo para 2030, escalando la operación a mercados
+              internacionales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / ALIANZAS ===== -->
+  <section class="alianzas" id="alianzas">
+    <div class="container alianzas-inner">
+      <h2 class="display">
+        Buscamos <em>aliados</em><br />
+        que crean en el <em>territorio.</em>
+      </h2>
+      <p>
+        Trabajar con COANDILAC es invertir en calidad, origen y transformación social desde el corazón del altiplano
+        nariñense.
+      </p>
+      <div class="alianzas-btns">
+        <a href="#contacto" class="btn-primary">
+          Hablar con nosotros
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#territorio" class="btn-secondary">Conocer el territorio</a>
+      </div>
+      <div class="alianzas-features">
+        <div class="alianza-feat reveal">
+          <div class="af-num">01</div>
+          <div class="af-lbl">Genera valor económico real</div>
+        </div>
+        <div class="alianza-feat reveal reveal-delay-1">
+          <div class="af-num">02</div>
+          <div class="af-lbl">Fortalece comunidades rurales</div>
+        </div>
+        <div class="alianza-feat reveal reveal-delay-2">
+          <div class="af-num">03</div>
+          <div class="af-lbl">Impulsa desarrollo sostenible</div>
+        </div>
+        <div class="alianza-feat reveal reveal-delay-3">
+          <div class="af-num">04</div>
+          <div class="af-lbl">Visión agroindustrial 2030</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contacto">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="coandilac.png" alt="Coandilac" />
+          <p>Desde Guachucal, Nariño, llevamos al mundo productos con propósito y origen verificable.</p>
+          <div class="social-links">
+            <a href="https://wa.me/573054384239" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+              </svg>
+            </a>
+            <a href="mailto:cooandilac@gmail.com" aria-label="Email">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="#territorio">Territorio</a>
+          <a href="#proposito">Propósito</a>
+          <a href="#aliados">Empresas Aliadas</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#alianzas">Alianzas</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <a href="https://wa.me/573054384239" target="_blank" rel="noopener">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+            </svg>
+            +57 305 438 4239
+          </a>
+          <a href="mailto:cooandilac@gmail.com">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            cooandilac@gmail.com
+          </a>
+          <p>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Guachucal, Nariño · Colombia
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 COANDILAC · Cooperativa Andina de Lácteos</span>
+        <span>Hecho desde el sur de Colombia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- NAV scroll ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ---- Scroll reveal ----
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => revealObs.observe(el));
+
+    // ---- Stats: animación de línea superior ----
+    const statItems = document.querySelectorAll('.stat-item');
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    statItems.forEach(el => statObs.observe(el));
+
+    // ---- Contadores animados ----
+    function animateCounter(el, target, duration = 1800) {
+      const start = performance.now();
+      const isBig = target > 100;
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = Math.round(eased * target);
+        el.textContent = isBig ? val.toLocaleString('es-CO') : val;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = isBig ? target.toLocaleString('es-CO') : target;
+      }
+      requestAnimationFrame(step);
+    }
+    const counterEls = document.querySelectorAll('.counter');
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target, +entry.target.dataset.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counterEls.forEach(el => counterObs.observe(el));
+
+    // ---- Carruseles ----
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      const total = slides.length;
+      let current = 0;
+      let timer = null;
+
+      if (total <= 1) return;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Producto ' + (i + 1));
+        dot.addEventListener('click', () => { stop(); goTo(i); start(); });
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index) {
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots[current].classList.remove('active');
+        current = (index + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots[current].classList.add('active');
+      }
+      function start() { timer = setInterval(() => goTo(current + 1), 4000); }
+      function stop() { clearInterval(timer); }
+
+      carousel.querySelector('.carousel-btn.prev')?.addEventListener('click', () => { stop(); goTo(current - 1); start(); });
+      carousel.querySelector('.carousel-btn.next')?.addEventListener('click', () => { stop(); goTo(current + 1); start(); });
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+
+      let startX = 0;
+      carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      carousel.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { stop(); goTo(dx < 0 ? current + 1 : current - 1); start(); }
+      }, { passive: true });
+
+      start();
+    });
+
+    // ---- Smooth scroll ----
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+
+</html>
